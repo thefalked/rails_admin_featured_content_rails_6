@@ -22,4 +22,24 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.11"
+  spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "rails", "~> 6.0.3", ">= 6.0.3.3"
+  spec.add_development_dependency "rails_admin", "~> 2.0.2"
+  spec.add_development_dependency "capybara", "~> 2.7", ">= 2.7.0"
+  spec.add_development_dependency "launchy", "~> 2.4", ">= 2.4.3"
+  spec.add_development_dependency "shoulda-matchers", "~> 3.1"
+  spec.add_development_dependency "selenium-webdriver", "~> 2.53", ">= 2.53.4"
+  spec.add_development_dependency "factory_girl_rails", "~> 4.7", ">= 4.7.0"
+  spec.add_development_dependency "faker", "~> 1.6", ">= 1.6.3"
+
+  spec.add_runtime_dependency "carrierwave", "~> 0.11", ">= 0.11.0"
+  spec.add_runtime_dependency "croppie_rails", "~> 1.2", ">= 1.2.0"
+  spec.add_runtime_dependency "medium-editor-rails", "~> 2.1", ">= 2.1.0"
+  spec.add_runtime_dependency "mini_magick", "~> 4.5", ">= 4.5.1"
+  spec.add_runtime_dependency "friendly_id", "~> 5.1", ">= 5.1.0"
+  spec.add_runtime_dependency "simple_form", "~> 3.2"
+  spec.add_runtime_dependency "rails-html-sanitizer", "~> 1.0", ">= 1.0.3"
+  spec.add_runtime_dependency "owlcarousel-rails", "~> 0"
 end
