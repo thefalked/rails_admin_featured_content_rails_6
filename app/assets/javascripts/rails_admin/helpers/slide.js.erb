@@ -1,0 +1,77 @@
+// slide active
+function slideActive(container) {
+  if(container) {
+    container.owlCarousel({
+      singleItem: true,
+      slideSpeed: 500,
+      autoPlay: false,
+      stopOnHover: true,
+      paginationSpeed: 500,
+      rewindSpeed: 1000,
+      navigation: true,
+      touchDrag: false,
+      mouseDrag: false,
+      navigationText: ['&lsaquo;','&rsaquo;']
+    });
+  }
+};
+
+// slide add
+function slideAdd(row_id, reference) {
+  section_id = generateID();
+
+  var element = '<div class="fc-item fc-slide__owl" id="'+ section_id +'">';
+  element += '<input class="fc-search" type="text" name="search" placeholder="<%= I18n.t('admin.actions.featured_content.snippet.search_news') %>">';
+  element += '<div class="fc-slide__item">';
+  element += '<div class="fc-tools fc-tools--center">';
+  element += '<a class="fc-tools__btn fc-tools__btn--upload fa fa-camera" href="#'+ section_id + '"></a>';
+  element += '<a class="fc-tools__btn fc-tools__btn--slide-add fa fa-plus" data-row="'+ row_id +'" href="#'+ section_id +'"></a>';
+  element += '<a class="fc-tools__btn fc-tools__btn--slide-remove fa fa-trash" data-row="'+ row_id +'" href="#'+ section_id +'"></a>';
+  element += '</div>';
+  element += '<a href="#" class="fc-link fc-slide__link"></a>';
+  element += '<h2 class="fc-caption fc-slide__caption"></h2>';
+  element += '<figure class="fc-slide__figure">';
+  element += '<img class="fc-slide__image" src="<%= image_url'cb-image-default.jpg' %>">';
+  element += '<input class="fc-tools__input fc-tools__input--upload" type="file" name="image" id="'+ section_id +'">';
+  element += '</figure>';
+  element += '<div class="fc-slide__content">';
+  element += '<h1 class="fc-title fc-slide__title"></h1>';
+  element += '<p class="fc-text fc-slide__text"></p>';
+  element += '</div>';
+  element += '</section>';
+  element += '</div>';
+  element += '</div>';
+
+  var container = $('#'+ row_id +'  .fc-slide');
+
+  container.data('owlCarousel').addItem(element, [0]);
+  container.data('owlCarousel').jumpTo(0);
+
+  autocomplete(section_id);
+  addEventToInputFile(section_id);
+  editable();
+}
+
+// slide destroy
+function slideDestroy(container) {
+  if(container.length) {
+    for(var i = 0; i < container.length; i++) {
+      $(container[i]).data('owlCarousel').destroy();
+    }
+  }
+}
+
+// slide remove
+function slideRemove(row_id, reference) {
+  var container = $('#'+ row_id +'  .fc-slide');
+  var items = $('#'+ row_id +'  .fc-slide__owl');
+
+  for(i = 0; i < items.length; i++) {
+    if('#' + items[i].id == reference.attr('href')) {
+      container.data('owlCarousel').removeItem(i);
+      container.data('owlCarousel').jumpTo(i);
+
+      break;
+    }
+  }
+}
