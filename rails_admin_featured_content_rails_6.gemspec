@@ -34,12 +34,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_girl_rails", "~> 4.7", ">= 4.7.0"
   spec.add_development_dependency "faker", "~> 1.6", ">= 1.6.3"
 
-  spec.add_runtime_dependency "carrierwave", "~> 0.11", ">= 0.11.0"
+  spec.add_runtime_dependency "carrierwave", "~> 2.0"
   spec.add_runtime_dependency "croppie_rails", "~> 1.2", ">= 1.2.0"
   spec.add_runtime_dependency "medium-editor-rails", "~> 2.1", ">= 2.1.0"
   spec.add_runtime_dependency "mini_magick", "~> 4.5", ">= 4.5.1"
   spec.add_runtime_dependency "friendly_id", "~> 5.1", ">= 5.1.0"
-  spec.add_runtime_dependency "simple_form", "~> 3.2"
+  spec.add_runtime_dependency "simple_form", "~> 5.0.2"
   spec.add_runtime_dependency "rails-html-sanitizer", "~> 1.0", ">= 1.0.3"
   spec.add_runtime_dependency "owlcarousel-rails", "~> 0"
 end
