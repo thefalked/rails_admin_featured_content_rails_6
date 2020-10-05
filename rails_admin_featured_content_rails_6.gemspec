@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Easy way for create featured contents using rails_admin on rails 6"
   spec.homepage      = "https://github.com/thefalked/rails_admin_featured_content_rails_6"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
 
