@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-class RailsAdminFeaturedContentRails6Generator < Rails::Generators::Base
+class RailsAdminFeaturedContentGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
 
   def self.source_root
